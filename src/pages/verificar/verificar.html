@@ -1,0 +1,34 @@
+<!--
+  Generated template for the VerificarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>verificar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-item>
+    	<ion-label fixed>Patente: </ion-label>
+    	<ion-input type="text" [value]="clave" [(ngModel)]="clave"></ion-input>
+  	</ion-item>
+    <br>
+    <button ion-button full color="default" (click)="verificarRest()">Verificar</button>
+  	<br>
+
+    <!-- habilitar botones segun respuesta,enviar patente y punto  
+    servicio retorna numero de verificaciones incorrectas  -->
+<!--   	<button ion-button full color="danger">Llamar grua</button>
+  	<br>
+    <button ion-button full color="secondary">Notificar usuario</button>
+    <br>
+  	<button ion-button full color="secondary">Notificar Inspector</button>
+ -->
+
+</ion-content>
