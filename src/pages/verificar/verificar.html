@@ -24,11 +24,16 @@
 
     <!-- habilitar botones segun respuesta,enviar patente y punto  
     servicio retorna numero de verificaciones incorrectas  -->
-<!--   	<button ion-button full color="danger">Llamar grua</button>
-  	<br>
-    <button ion-button full color="secondary">Notificar usuario</button>
-    <br>
-  	<button ion-button full color="secondary">Notificar Inspector</button>
- -->
 
+    <div id="invisibe" hidden="true">
+     
+      Cantidad de verificaciones: {{cant}}  
+     
+     <br>
+      <button ion-button full color="secondary" (click)="mentira()">Notificar usuario</button>
+     <br>
+  	  <button ion-button full color="secondary" (click)="mentira()">Notificar Inspector</button>
+      <br>
+       <button ion-button full color="danger" (click)="mentira()">Llamar grua</button>
+    </div>
 </ion-content>

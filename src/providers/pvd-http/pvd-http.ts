@@ -14,7 +14,6 @@ export class PvdHttpProvider {
   uuid:string;
   constructor(public http: Http,
     public device:Device) {
- 
   }
 
 // getTarifaByGeoForInspector
@@ -26,7 +25,6 @@ getTarifaByGeoForInspector(lat,long) {
     console.log('url');
     console.log(url);
     var respuesta;
-
 
     return this.http.get(url).map(res => res.json()).map(
       data => {
@@ -42,7 +40,8 @@ getTarifaByGeoForInspector(lat,long) {
   }
   iniciarTurnoInspector(lat,long,mat,tel,hora) {
     
-    var url = 'http://192.168.0.60:8080/pillpa/device/iniciarTurnoInspector?latitud=' + lat + '&longitud='+long+'&matricula='+mat+'&telefono='+tel+'&cantHoras='+hora;
+    var disp = this.device.uuid;
+    var url = 'http://192.168.0.60:8080/pillpa/device/iniciarTurnoInspector?deviceID='+disp+'&latitud=' + lat + '&longitud='+long+'&matricula='+mat+'&telefono='+tel+'&cantHoras='+hora;
 
     console.log('url');
     console.log(url);
@@ -73,6 +72,7 @@ getTarifaByGeoForInspector(lat,long) {
     var respuesta;
     return this.http.get(url).map(res => res.json()).map(
       data => {
+        console.log('se rompe?');
         respuesta = JSON.parse(JSON.stringify(data));
         console.log('---respuesta del get');
         console.log(respuesta);

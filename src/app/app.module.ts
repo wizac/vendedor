@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { AlertController } from 'ionic-angular';
+
 
 import {VenderPage} from '../pages/vender/vender';
 import {VerificarPage} from '../pages/verificar/verificar';
@@ -44,7 +46,8 @@ import { Device } from '@ionic-native/device'
     PvdGeolocationProvider,
     PvdHttpProvider,
     Geolocation,
-    Device
+    Device,
+    AlertController
 
   ]
 })
