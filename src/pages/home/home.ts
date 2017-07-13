@@ -13,12 +13,13 @@ import { Device } from '@ionic-native/device'
 })
 export class HomePage {
 
-	uuid:any
+	uuid:any=this.device.uuid;
    constructor(public nav: NavController,
    		public pvdGeolocationProvider:PvdGeolocationProvider,
    		public device:Device){
-   	this.uuid=device.uuid;
-		
+   	console.log(this.uuid);
+   	
+		this.uuid=device.uuid;
 	}
 
 	verificar(){
