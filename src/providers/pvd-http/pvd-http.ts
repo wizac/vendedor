@@ -20,7 +20,7 @@ export class PvdHttpProvider {
 
 getTarifaByGeoForInspector(lat,long) {
     
-    var url = 'http://192.168.0.60:8080/pillpa/device/getTarifaByGeoForInspector?latitud=' + lat + '&longitud='+long;
+    var url = 'http://pillpa.cloud.runaid.com.ar/device/getTarifaByGeoForInspector?latitud=' + lat + '&longitud='+long;
 
     console.log('url');
     console.log(url);
@@ -41,7 +41,7 @@ getTarifaByGeoForInspector(lat,long) {
   iniciarTurnoInspector(lat,long,mat,tel,hora) {
     
     var disp = this.device.uuid;
-    var url = 'http://192.168.0.60:8080/pillpa/device/iniciarTurnoInspector?deviceID='+disp+'&latitud=' + lat + '&longitud='+long+'&matricula='+mat+'&telefono='+tel+'&cantHoras='+hora;
+    var url = 'http://pillpa.cloud.runaid.com.ar/device/iniciarTurnoInspector?deviceID='+disp+'&latitud=' + lat + '&longitud='+long+'&matricula='+mat+'&telefono='+tel+'&cantHoras='+hora;
 
     console.log('url');
     console.log(url);
@@ -65,7 +65,7 @@ getTarifaByGeoForInspector(lat,long) {
     //sacar dispositivo uuid aca 
    var disp = this.device.uuid;
    console.log(disp);
-  var url = 'http://192.168.0.60:8080/pillpa/device/verificar?latitud=' + lat + '&longitud='+long+'&deviceID='+disp+'&patente='+patente;
+  var url = 'http://pillpa.cloud.runaid.com.ar/device/verificar?latitud=' + lat + '&longitud='+long+'&deviceID='+disp+'&patente='+patente;
 
     console.log('url');
     console.log(url);
