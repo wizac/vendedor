@@ -58,6 +58,37 @@ export class VerificarPage {
     alert.present();
   }
 
+  callGrua(){
+     let alert = this.alertController.create({
+      title: 'Alerta',
+      subTitle: 'Alerta enviada',
+      buttons: [{text: 'Ok',
+          role: 'destructive',
+          handler: () => {
+          var lat;
+          var long;
+          this.pvdGeolocationProvider.getpos().then((resp)=>{
+              lat=JSON.parse(JSON.stringify(resp))['lat'];
+              long=JSON.parse(JSON.stringify(resp))['long'];
+              console.log("llega algo");
+               console.log(long);
+                console.log(lat);
+          })
+          .then(()=>{
+              this.navCtrl.pop();
+              console.log("entra llamar grua ");
+                this.pvdHttpProvider.llamarGrua(lat,long,this.clave).then((resp)=>
+                {
+                    console.log(resp);
+
+                })
+            }) 
+          }
+      }]
+   });
+   alert.present();
+  }
+
   verificarRest() {
     console.log("entra al rest");
 
@@ -66,7 +97,6 @@ export class VerificarPage {
 	var long;
 	console.log(this.clave);
 	//recuperar patente del input 
-	
   	this.pvdGeolocationProvider.getpos().then((resp)=>{
 			lat=JSON.parse(JSON.stringify(resp))['lat'];
 			long=JSON.parse(JSON.stringify(resp))['long'];

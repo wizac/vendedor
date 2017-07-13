@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {VenderPage} from '../vender/vender';
 import {VerificarPage} from '../verificar/verificar';
 import { PvdGeolocationProvider } from '../../providers/pvd-geolocation/pvd-geolocation';
+import { Device } from '@ionic-native/device'
 
 
 
@@ -12,8 +13,11 @@ import { PvdGeolocationProvider } from '../../providers/pvd-geolocation/pvd-geol
 })
 export class HomePage {
 
+	uuid:any
    constructor(public nav: NavController,
-   		public pvdGeolocationProvider:PvdGeolocationProvider){
+   		public pvdGeolocationProvider:PvdGeolocationProvider,
+   		public device:Device){
+   	this.uuid=device.uuid;
 		
 	}
 

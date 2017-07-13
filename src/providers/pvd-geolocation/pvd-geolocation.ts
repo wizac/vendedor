@@ -18,17 +18,3 @@ export class PvdGeolocationProvider {
 	});
  }
 }
-
-
-
-//iniciar turno device id la long mat tel horas;
-//get precio  lat long 
-
-//verificar ---mando lat/long mat --> cantidad de mal;
-
-
-
-
-//llamar inspector 
-//llamar grua 
-//llamar usuario
